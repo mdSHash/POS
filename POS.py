@@ -420,6 +420,17 @@ class POSSystem(QMainWindow):
                 background-color: {DARK_THEME['button_hover']};
             }}
         """)
+        # Footer
+        footer_label = QLabel("Developed by Mostafa Ayman V0.2")
+        footer_label.setAlignment(Qt.AlignCenter)
+        footer_label.setStyleSheet(f"""
+            QLabel {{
+                background-color: {DARK_THEME['button_bg']};
+                color: {DARK_THEME['foreground']};
+                padding: 10px;
+                font-size: 20px;
+            }}
+        """)
         
         # Create tabs
         self.pos_tab = QWidget()
@@ -438,6 +449,7 @@ class POSSystem(QMainWindow):
         # Main layout
         main_layout = QVBoxLayout(self.central_widget)
         main_layout.addWidget(self.tab_widget)
+        main_layout.addWidget(footer_label)
         
         # Set up individual tabs
         self.setup_pos_tab()
